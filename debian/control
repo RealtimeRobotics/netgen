@@ -1,0 +1,126 @@
+Source: netgen
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Uploaders: "Adam C. Powell, IV" <hazelsct@debian.org>,
+           Kurt Kremitzki <kurt@kwk.systems>
+Section: math
+Priority: optional
+Build-Depends: cmake,
+               debhelper (>= 11),
+               dh-python,
+               libtool,
+               tcl-dev,
+               tk-dev,
+               tix-dev,
+               docbook-to-man,
+               libxmu-dev,
+               libglu1-mesa-dev,
+               libmetis-dev,
+               libocct-data-exchange-dev,
+               libocct-foundation-dev,
+               libocct-visualization-dev,
+               libocct-ocaf-dev,
+               libopenmpi-dev,
+               libtogl-dev,
+               libswscale-dev,
+               libjpeg-dev,
+               libbz2-dev,
+               pybind11-dev,
+               python3-dev,
+               python3-dbg
+Standards-Version: 4.1.4
+Vcs-Browser: https://salsa.debian.org/science-team/netgen
+Vcs-Git: https://salsa.debian.org/science-team/netgen.git
+Homepage: https://ngsolve.org
+
+Package: netgen
+Architecture: any
+Depends: libnglib-6.2.1804 (= ${binary:Version}),
+         tix,
+         ${shlibs:Depends},
+         ${misc:Depends}
+Suggests: netgen-doc
+Description: Automatic 3d tetrahedral mesh generator
+ NETGEN is an automatic 3d tetrahedral mesh generator. It accepts
+ input from constructive solid geometry (CSG) or boundary
+ representation (BRep) from STL file format.  NETGEN contains modules
+ for mesh optimization and hierarchical mesh refinement.
+
+Package: netgen-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Suggests: netgen
+Description: Automatic 3d tetrahedral mesh generator documentation
+ NETGEN is an automatic 3d tetrahedral mesh generator. It accepts
+ input from constructive solid geometry (CSG) or boundary
+ representation (BRep) from STL file format.  NETGEN contains modules
+ for mesh optimization and hierarchical mesh refinement.
+ .
+ This package contains the user manual (in PDF format) and example
+ files.
+
+Package: libnglib-dev
+Architecture: any
+Section: libdevel
+Depends: libnglib-6.2.1804 (= ${binary:Version}),
+         ${misc:Depends}
+Description: Automatic 3d tetrahedral mesh generator development files
+ NETGEN is an automatic 3d tetrahedral mesh generator. It accepts
+ input from constructive solid geometry (CSG) or boundary
+ representation (BRep) from STL file format. The connection to a
+ geometry kernel allows the handling of IGES and STEP files. NETGEN
+ contains modules for mesh optimization and hierarchical mesh
+ refinement.
+ .
+ This package contains the static libraries and header files.
+
+Package: libnglib-6.2.1804
+Architecture: any
+Multi-Arch: same
+Section: libs
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Description: Automatic 3d tetrahedral mesh generator shared library
+ NETGEN is an automatic 3d tetrahedral mesh generator. It accepts
+ input from constructive solid geometry (CSG) or boundary
+ representation (BRep) from STL file format. The connection to a
+ geometry kernel allows the handling of IGES and STEP files. NETGEN
+ contains modules for mesh optimization and hierarchical mesh
+ refinement.
+ .
+ This package contains the shared libraries.
+
+Package: netgen-headers
+Architecture: any
+Section: libdevel
+Depends: libnglib-dev (= ${binary:Version}),
+         ${misc:Depends}
+Description: Automatic 3d tetrahedral mesh generator internal headers
+ NETGEN is an automatic 3d tetrahedral mesh generator. It accepts
+ input from constructive solid geometry (CSG) or boundary
+ representation (BRep) from STL file format. The connection to a
+ geometry kernel allows the handling of IGES and STEP files. NETGEN
+ contains modules for mesh optimization and hierarchical mesh
+ refinement.
+ .
+ This package contains internal headers.
+
+Package: python3-netgen
+Architecture: any
+Section: python
+Depends: libnglib-6.2.1804 (= ${binary:Version}),
+         ${shlibs:Depends},
+         ${misc:Depends},
+         ${python3:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Provides: ${python3:Provides}
+Description: Automatic 3d tetrahedral mesh generator Python 3 bindings
+ NETGEN is an automatic 3d tetrahedral mesh generator. It accepts
+ input from constructive solid geometry (CSG) or boundary
+ representation (BRep) from STL file format. The connection to a
+ geometry kernel allows the handling of IGES and STEP files. NETGEN
+ contains modules for mesh optimization and hierarchical mesh
+ refinement.
+ .
+ This package contains Python 3 bindings.

@@ -1,0 +1,354 @@
+netgen (6.2.1804+dfsg1-3build2) focal; urgency=medium
+
+  * No-change rebuild for libgcc-s1 package name change.
+
+ -- Matthias Klose <doko@ubuntu.com>  Mon, 23 Mar 2020 07:20:38 +0100
+
+netgen (6.2.1804+dfsg1-3build1) focal; urgency=medium
+
+  * No-change rebuild to build with python3.8.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sat, 25 Jan 2020 05:42:26 +0000
+
+netgen (6.2.1804+dfsg1-3) unstable; urgency=medium
+
+  * [425e45e] Use new OpenCASCADE path
+
+ -- Kurt Kremitzki <kurt@kwk.systems>  Fri, 01 Mar 2019 12:44:35 -0600
+
+netgen (6.2.1804+dfsg1-2) unstable; urgency=medium
+
+  * [a2eccc0] Disable native arch builds
+
+ -- Kurt Kremitzki <kurt@kwk.systems>  Fri, 28 Dec 2018 21:48:38 -0600
+
+netgen (6.2.1804+dfsg1-1) unstable; urgency=medium
+
+  * [86ccafe] Fix missing libnglib dependency for netgen binary
+
+ -- Kurt Kremitzki <kurt@kwk.systems>  Fri, 03 Aug 2018 20:19:51 -0500
+
+netgen (6.2.1804+dfsg1-1~exp2) experimental; urgency=medium
+
+  * Add SSE guard patch to fix non-x86 builds
+  * Only use MPI on appropriate build arches
+
+ -- Kurt Kremitzki <kurt@kwk.systems>  Fri, 27 Jul 2018 13:48:52 -0500
+
+netgen (6.2.1804+dfsg1-1~exp1) experimental; urgency=medium
+
+  [ Kurt Kremitzki ]
+  * Updated for upstream release 6.2.1804
+  * Changed dependency from liboce->libocct
+  * Autotools->cmake
+  * Support for Python 3 bindings package python3-netgen
+
+  [ Anton Gladky ]
+  * Remove myself from uploaders
+
+ -- Kurt Kremitzki <kkremitzki@gmail.com>  Sat, 09 Jun 2018 17:32:28 -0500
+
+netgen (4.9.13.dfsg-11) unstable; urgency=medium
+
+  * [f9d1707] Disable deprecated in oce functions
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 21 Sep 2017 21:17:40 +0200
+
+netgen (4.9.13.dfsg-10) unstable; urgency=medium
+
+  * [f5aa1b2] Mark libnglib-4.9.13 as Multi-Arch: same
+  * [5db4cfb] Update d/watch.
+  * [c2dc4fc] Remove readme-files.
+  * [2265ee3] Remove netgen.maintscript
+  * [75b9e90] Install some more headers.
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 16 Jul 2017 20:04:53 +0200
+
+netgen (4.9.13.dfsg-9) unstable; urgency=medium
+
+  * [f6e3fde] Use dh 10 instead of cdbs. Simplify d/rules.
+  * [46777a6] Move manpages into debian/manpages.
+  * [c1dcc84] Install all tcl-files.
+  * [dcc5d61] Drop executable flag in tcl
+  * [f32f653] Fix startup-crash. (Closes: #782361)
+  * [2df4370] Remove tix-dev from depends of netgen. (Closes: #736402)
+  * [f4d1b41] Remove Christophe from uploaders. (Closes: #835018)
+  * [96633b5] Add netgen-doc in suggests-section of netgen. (Closes: #849901)
+  * [c11431b] Add myself to uploaders.
+  * [028961d] Use DEP-5 for d/copyright.
+  * [1a813c8] Apply cme fix dpkg.
+  * [b68a25e] Fix indent in d/copyright.
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 16 Jul 2017 17:03:28 +0200
+
+netgen (4.9.13.dfsg-8) unstable; urgency=medium
+
+  * Team upload.
+  * Patch netgen to set NETGENDIR if not already set. (Closes: #648047)
+  * Remove /etc/profile.d/netgen.{csh,sh}. (Closes: #671186)
+
+ -- Ansgar Burchardt <ansgar@debian.org>  Tue, 10 Dec 2013 10:15:08 +0100
+
+netgen (4.9.13.dfsg-7) unstable; urgency=low
+
+  * Drop quilt.mk and quilt build-depends, as otherwise patches are
+    unapplied before autoreconf and thus this package FTBFS, as without
+    patches autoreconf fails. Closes: #713306
+
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Thu, 22 Aug 2013 20:50:56 +0100
+
+netgen (4.9.13.dfsg-6) unstable; urgency=low
+
+  * Team upload.
+  * Fix automake1.13 FTBFS at autoreconf. Closes: #713306
+  * Disable ffmpeg/avcodec, GPL incompatible + needs porting to new
+    api. Closes: #618968
+
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Wed, 21 Aug 2013 23:29:59 +0100
+
+netgen (4.9.13.dfsg-5) experimental; urgency=low
+
+  * Team upload.
+  * Use libjpeg-dev not libjpeg62-dev (closes: #644069).
+  * Fix build against oce 0.10 (closes: #677558).
+  * Tweak debian/rules to fix building twice in a row.
+  * Fix libnglib-4.9.13 short description.
+  * Add netgen-headers package providing internal headers (closes: #683661)
+  * Bump oce build-dependencies to 0.10.
+
+ -- Julien Cristau <julien.cristau@logilab.fr>  Tue, 27 Nov 2012 10:53:26 +0100
+
+netgen (4.9.13.dfsg-4) unstable; urgency=low
+
+  [ Denis Barbier ]
+  * Switch from OpenCASCADE to OCE (closes: #659132).
+
+ -- "Adam C. Powell, IV" <hazelsct@debian.org>  Tue, 06 Mar 2012 11:17:32 -0500
+
+netgen (4.9.13.dfsg-3) unstable; urgency=low
+
+  * Versioned Depends on libopencascade-modeling-dev (closes: #619931).
+
+ -- "Adam C. Powell, IV" <hazelsct@debian.org>  Mon, 11 Apr 2011 18:04:44 -0400
+
+netgen (4.9.13.dfsg-2) unstable; urgency=low
+
+  * Patched to work with OpenCASCADE 6.5.0 (closes: #619931).
+
+ -- "Adam C. Powell, IV" <hazelsct@debian.org>  Fri, 01 Apr 2011 17:14:50 -0400
+
+netgen (4.9.13.dfsg-1) unstable; urgency=low
+
+  [ Reinhard Tartler ]
+  * Add a flag to unbreak building with FFmpeg 0.6 (closes: #588982)
+
+  [ Adam C. Powell, IV ]
+  * New upstream (closes: #586786).
+  * Quoted Adam Powell's name in the changelog (closes: #591770).
+  * Added debian/patches/quiltrc and refreshed patches.
+  * Bumped Standards-Version.
+  * Added lintian overrides file.
+
+ -- "Adam C. Powell, IV" <hazelsct@debian.org>  Thu, 21 Oct 2010 23:48:28 -0400
+
+netgen (4.9.12.dfsg-3) unstable; urgency=low
+
+  * Added automake to Build-Depends (closes: #580516).
+  * Moved to Debian Science git repository and updated control accordingly.
+  * Move aside autotools-related files during configuration and cleaning.
+
+ -- Adam C. Powell, IV <hazelsct@debian.org>  Fri, 14 May 2010 15:50:02 -0400
+
+netgen (4.9.12.dfsg-2) unstable; urgency=low
+
+  [ Christophe Trophime ]
+  * debian/control : added autoconf (Closes: #578292)
+  * debian/watch : added dversionmangle
+  * Change netgen icon
+
+  [ Adam C. Powell, IV ]
+  * Changed netgen.desktop to set NETGENDIR variable.
+
+ -- Adam C. Powell, IV <hazelsct@debian.org>  Tue, 04 May 2010 06:41:35 -0400
+
+netgen (4.9.12.dfsg-1) unstable; urgency=low
+
+  [ Christophe Prud'homme ]
+  * New upstream release (Closes: #514621).
+  * debian/watch: added
+
+  [ Adam C. Powell, IV ]
+  * Bumped Standards-Version.
+  * Forward-ported netgen-missing-symbols.patch.
+  * Simplified rules considerably for new autotools build system.
+  * Added OpenCASCADE support (Closes: #506523).
+  * Added -release versioning to libnglib and changed shlib package name from
+    libnetgen4.9 to libnglib-4.9.12.
+  * Changed source format to 3.0 (quilt).
+  * Added autotools-dev and libtool to Build-Depends.
+  * Updated README.Debian.
+  * Removed doc/ng4.pdf because there's no source for it.
+
+  [ Christophe Trophime ]
+  * Add support for jpeglib
+  * Add support for ffmpeg
+  * Disable netgen profiling
+  * Add missing man pages
+  * Add /usr/share/netgen which contains *.tcl
+  * Setting NETGENDIR to /usr/share/netgen in /etc/profile.d/*sh
+  * Fix permissions on tcl scripts in /usr/share/netgen
+  * Move netgen.ocf to /usr/share/netgen
+  * Added libbz2-dev to debian/control
+  * Add menu entry for netgen
+
+ -- Adam C. Powell, IV <hazelsct@debian.org>  Mon, 12 Apr 2010 22:24:17 -0400
+
+netgen (4.4-15) unstable; urgency=low
+
+  [Christophe Prud'homme]
+  * Bug fix: "patch depends on changes from .diff.gz", thanks to Raphael
+    Hertzog (Closes: #485181).
+  * Bug fix: "obsolete binaries need to be removed", thanks to Frank
+    Lichtenheld (Closes: #490750).
+
+  [Daniel Leidert]
+  * debian/copyright: Completed.
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Sun, 09 Nov 2008 12:47:59 +0100
+
+netgen (4.4-14) unstable; urgency=low
+
+  * debian/control: do not build on alpha, hppa and m68k
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Sat, 26 Apr 2008 11:18:42 +0200
+
+netgen (4.4-13) unstable; urgency=low
+
+  * Bug fix: "netgen: Undefined symbols in libraries", thanks to Adam C
+    Powell IV (Closes: #475323).
+  * debian/rules: build depends on libgl1-mesa-dev|nvidia-glx-dev
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Sun, 13 Apr 2008 12:44:21 +0200
+
+netgen (4.4-12) unstable; urgency=low
+
+  * attempt to fix hppa build
+  * Bug fix: "netgen: FTBFS: include/../ngstd/array.hpp:294: error:
+    &#39;memcpy&#39; was not declared in this scope", thanks to Lucas
+    Nussbaum (Closes: #474828).
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Wed, 09 Apr 2008 08:28:05 +0200
+
+netgen (4.4-11) unstable; urgency=low
+
+  [ Christophe Prud'homme ]
+  * debian/rules: export LINK
+  * fixed build on ia64 and possibly other archs
+  * debian/patches/netgen-shlibs.patch: cleanup up LINKFLAGS2
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Mon, 07 Apr 2008 13:28:49 +0200
+
+netgen (4.4-10) unstable; urgency=low
+
+  [ Daniel Leidert ]
+  * debian/control: Added Homepage field. Vcs fields transition. Fixed Vcs-Svn
+    field.
+  * debian/netgen-doc.doc-base: Fixed encoding of the file.
+    (Abstract): Improved description.
+    (Section): Fixed for doc-base 0.8.10.
+  * debian/rules (clean): Fixed to build twice in a row.
+  * debian/patches/stdlib.patch: Adjusted to compile with GCC 4.3 (closes:
+    #454830).
+  * debian/patches/netgen-shlibs.patch: Adjusted. Add linkages to resolve
+    symbols for the libraries. Otherwise the library package dependencies will
+    not be correct.
+  * debian/patches/clean.patch: Removed. Not sufficient. Better be done in
+    debian/rules.
+
+  [ Christophe Prud'homme ]
+  * debian/rules: export CC/CPLUSPLUS
+  * Upload
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Mon, 07 Apr 2008 10:53:48 +0200
+
+netgen (4.4-9) unstable; urgency=low
+
+  * Bug fix: "netgen: clean target is insufficient", thanks to brian
+    m. carlson (Closes: #455536).
+  * Bug fix: "FTBFS with GCC 4.3: missing #includes", thanks to Martin
+    Michlmayr (Closes: #454830).
+  * Bug fix: "netgen: Interface lib is missing nglib.cpp", thanks to Adam
+    C. Powell (Closes: #461929).
+  * Bug fix: "netgen: Please add shared libs", thanks to Adam
+    C. Powell (Closes: #462105).
+  * debian/control: Fixed Depends for libnetgen
+  * debian/control: Updated Standards-Version
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Fri, 08 Feb 2008 09:27:04 +0100
+
+netgen (4.4-8) unstable; urgency=low
+
+  [ Christophe Prud'homme ]
+  * Bug fix: "FTBFS with GCC 4.3: missing #includes", thanks to Martin
+    Michlmayr (Closes: #417451).
+
+  [ Rafael Laboissiere ]
+  * debian/control: Added XS-Vcs-Svn and XS-Vcs-Browser fields to the Source
+    section
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Tue, 17 Jul 2007 06:32:28 +0200
+
+netgen (4.4-7) unstable; urgency=low
+
+  * Added g++ to Build-Depends, it might help build on arm
+  * Updated Standards-Version to 3.7.2 (no change)
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Sun, 30 Jul 2006 17:09:06 +0200
+
+netgen (4.4-6) unstable; urgency=low
+
+  * Bug fix: "netgen: FTBFS: cannot find -lXi", thanks to Daniel Schepler
+    (Closes: #370176).
+  * Make it compile with g++ 4.1
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Fri,  9 Jun 2006 08:00:29 +0200
+
+netgen (4.4-5) unstable; urgency=low
+
+  * Fixed netgen override disparity
+  * Fixed tix dependency
+  * Changed Maintainer to pkg-scicomp Alioth project and added myself to
+    the list of Uploaders
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Sun,  9 Apr 2006 17:43:36 +0200
+
+netgen (4.4-4) unstable; urgency=low
+
+  * Bug fix: "netgen: does not run or missing dependency", thanks to
+    Laurent Bonnaud (Closes: #359949).
+  * Bug fix: "FTBFS with G++ 4.1: misc errors", thanks to Martin Michlmayr
+    (Closes: #361336).
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Sat,  8 Apr 2006 10:57:12 +0200
+
+netgen (4.4-3) unstable; urgency=low
+
+  * Fixed build-depends: added libxmu-dev
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Sat, 25 Mar 2006 13:49:40 +0100
+
+netgen (4.4-2) unstable; urgency=low
+
+  * Fixed build-depends
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Fri, 17 Mar 2006 19:33:04 +0100
+
+netgen (4.4-1) unstable; urgency=low
+
+  * Initial release Closes: #343082
+  * applied patch by D. Barbier <barbier@linuxfr.org> to disable occ
+  * Note to archive maintainer: I have added license.terms (tk license)
+    and LICENSE.togl (close to tk license) to the archive and all
+    copyright holders are listed in debian/copyright
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Sat, 18 Feb 2006 11:25:26 +0100

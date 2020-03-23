@@ -1,0 +1,26 @@
+libsrc/general/*.hpp usr/include/netgen/general
+libsrc/csg/*.hpp usr/include/netgen/csg
+libsrc/geom2d/*.hpp usr/include/netgen/geom2d
+libsrc/gprim/*.hpp usr/include/netgen/gprim
+libsrc/include/*.hpp usr/include/netgen/include
+libsrc/include/*.h usr/include/netgen/include
+libsrc/linalg/*.hpp usr/include/netgen/linalg
+libsrc/meshing/*.hpp usr/include/netgen/meshing
+libsrc/occ/*.hpp usr/include/netgen/occ
+libsrc/occ/Partition_*.hxx usr/include/netgen/occ
+libsrc/stlgeom/*.hpp usr/include/netgen/stlgeom
+libsrc/visualization/*.hpp usr/include/netgen/visualization
+
+usr/include/netgen/interface/*.hpp
+usr/include/netgen/include/mystdlib.h 
+usr/include/netgen/include/*.hpp
+usr/include/netgen/csg/*.hpp
+usr/include/netgen/general/gzstream.h
+usr/include/netgen/general/*.hpp
+usr/include/netgen/stlgeom/*.hpp
+usr/include/netgen/visualization/*.hpp
+usr/include/netgen/occ/*.hpp
+usr/include/netgen/linalg/*.hpp
+usr/include/netgen/meshing/*.hpp
+usr/include/netgen/gprim/*.hpp
+usr/include/netgen/geom2d/*.hpp

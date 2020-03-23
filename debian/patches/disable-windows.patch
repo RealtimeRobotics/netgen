@@ -1,0 +1,15 @@
+Description: Disable reference to Windows-specific files excluded via d/copyright
+Author: Kurt Kremitzki <kkremitzki@gmail.com>
+Last-Update: 2018-06-09
+
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -351,7 +351,7 @@
+ endif (USE_PYTHON)
+ add_subdirectory(py_tutorials)
+ add_subdirectory(doc)
+-add_subdirectory(windows)
++#add_subdirectory(windows)
+ add_subdirectory(nglib)
+ add_subdirectory(tests)
+

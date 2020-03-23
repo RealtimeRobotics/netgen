@@ -1,0 +1,5 @@
+usr/include/netgen/*.h
+usr/include/netgen/*.hpp
+
+usr/lib/cmake/netgen/netgen-targets*.cmake
+usr/lib/cmake/netgen/NetgenConfig.cmake

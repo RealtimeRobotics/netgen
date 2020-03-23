@@ -1,0 +1,17 @@
+Description: Prevent old platforms from trying to include nonexistent file
+Author: Kurt Kremitzki <kurt@kwk.systems>
+Last-Updated: 2018-07-26
+
+--- a/libsrc/general/ngsimd.hpp
++++ b/libsrc/general/ngsimd.hpp
+@@ -6,7 +6,10 @@
+ /* Date:   25. Mar. 16                                                    */
+ /**************************************************************************/
+ 
++#ifdef __SSE__
+ #include <immintrin.h>
++#endif
++
+ #include <tuple>
+ #include <ostream>
+ #include <stdexcept>

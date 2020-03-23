@@ -1,0 +1,3 @@
+version=3
+opts="dversionmangle=s/\+dfsg\d*$//, repacksuffix=+dfsg1,uversionmangle=s/_/./g, filenamemangle=s/.+\/v?(\d\S+)\.tar\.gz/netgen-$1\.tar\.gz/" \
+  https://github.com/ngsolve/netgen/tags .*/v?(\d\S+)\.tar\.gz

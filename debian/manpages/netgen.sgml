@@ -1,0 +1,197 @@
+<!doctype refentry PUBLIC "-//OASIS//DTD DocBook V4.1//EN" [
+
+<!-- Process this file with docbook-to-man to generate an nroff manual
+     page: `docbook-to-man manpage.sgml > manpage.1'.  You may view
+     the manual page with: `docbook-to-man manpage.sgml | nroff -man |
+     less'.  A typical entry in a Makefile or Makefile.am is:
+
+manpage.1: manpage.sgml
+	docbook-to-man $< > $@
+
+    
+	The docbook-to-man binary is found in the docbook-to-man package.
+	Please remember that if you create the nroff version in one of the
+	debian/rules file targets (such as build), you will need to include
+	docbook-to-man in your Build-Depends control field.
+
+  -->
+
+  <!-- Fill in your name for FIRSTNAME and SURNAME. -->
+  <!ENTITY dhfirstname "<firstname>Christophe</firstname>">
+  <!ENTITY dhsurname   "<surname>Prud'homme</surname>">
+  <!-- Please adjust the date whenever revising the manpage. -->
+  <!ENTITY dhdate      "<date>January  4, 2006</date>">
+  <!-- SECTION should be 1-8, maybe w/ subsection other parameters are
+       allowed: see man(7), man(1). -->
+  <!ENTITY dhsection   "<manvolnum>1</manvolnum>">
+  <!ENTITY dhemail     "<email>prudhomm@debian.org</email>">
+  <!ENTITY dhusername  "Christophe Prud'homme">
+  <!ENTITY dhucpackage "<refentrytitle>NETGEN</refentrytitle>">
+  <!ENTITY dhpackage   "netgen">
+
+  <!ENTITY debian      "<productname>Debian</productname>">
+  <!ENTITY gnu         "<acronym>GNU</acronym>">
+  <!ENTITY gpl         "&gnu; <acronym>GPL</acronym>">
+]>
+
+<refentry>
+  <refentryinfo>
+    <address>
+      &dhemail;
+    </address>
+    <author>
+      &dhfirstname;
+      &dhsurname;
+    </author>
+    <copyright>
+      <year>2003</year>
+      <holder>&dhusername;</prudhomm></holder>
+    </copyright>
+    &dhdate;
+  </refentryinfo>
+  <refmeta>
+    &dhucpackage;
+
+    &dhsection;
+  </refmeta>
+  <refnamediv>
+    <refname>&dhpackage;</refname>
+
+    <refpurpose>Automatic 3d tetrahedral mesh generator</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>&dhpackage;</command>
+
+      <arg>OPTIONS...</arg>
+      <arg>file.geo</arg>
+
+    </cmdsynopsis>
+  </refsynopsisdiv>
+  <refsect1>
+    <title>DESCRIPTION</title>
+
+    <para>This manual page documents briefly the
+      <command>&dhpackage;</command> and <command>bar</command>
+      commands.</para>
+
+    <para>This manual page was written for the &debian; distribution
+      because the original program does not have a manual page.</para>
+
+    <para><command>&dhpackage;</command> is an automatic mesh
+   generation tool for two and three dimensions.  Netgen generates
+   triangular or quadrilateral meshes in 2D, and tetrahedral meshes in
+   3D.</para>
+
+    <para>The input for 2D is described by spline curves, and the
+   input for 3D problems is either defined by constructive solid
+   geometries, or by the standard STL file format.  Netgen contains
+   modules for mesh optimization and hierarchical mesh refinement.
+   Curved elements are supported of arbitrary order.</para>
+
+    <para>Homepage: http://www.mathcces.rwth-aachen.de/netgen/doku.php</para>
+
+  </refsect1>
+
+  <refsect1>
+    <title>OPTIONS</title>
+
+    <variablelist>
+      <varlistentry>
+	<term><option>-geofile=filename</option>
+	</term>
+	<listitem>
+	  <para>Input geometry file (alternative:  netgen filename)</para>
+	</listitem>
+      </varlistentry>
+      
+      <varlistentry>
+	<term><option>-meshfile=filename</option>
+	</term>
+	<listitem>
+	  <para>Output mesh file</para>
+	</listitem>
+      </varlistentry>
+      
+      <varlistentry>
+	<term><option>-verycoarse</option>
+	  <option>-coarse</option>
+	  <option>-moderate</option>
+	  <option>-fine</option>
+	  <option>-veryfine</option>
+	</term>
+	<listitem>
+	  <para>Automatic mesh-size selection</para>
+	</listitem>
+      </varlistentry>
+      
+      <varlistentry>
+	    <term><option>--meshfiletype=type</option>
+	    </term>
+	    <listitem>
+	      <para>Filetype of output file, default is netgen file</para>
+	    </listitem>
+      </varlistentry>
+
+      </varlistentry>
+	  <varlistentry>
+	    <term><option>--batchmode</option>
+	    </term>
+	    <listitem>
+	      <para>Run in batchmode</para>
+	    </listitem>
+      </varlistentry>
+
+
+      <varlistentry>
+        <term><option>-V</option>
+        </term>
+        <listitem>
+	      <para>Print additional information</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+
+
+  <refsect1>
+    <title>SEE ALSO</title>
+
+    <para>gmsh (1)</para>
+
+  </refsect1>
+  <refsect1>
+    <title>AUTHOR</title>
+
+    <para>This manual page was written by &dhusername; &dhemail; for
+      the &debian; system (but may be used by others).  Permission is
+      granted to copy, distribute and/or modify this document under
+      the terms of the &gnu; General Public License, Version 2 any 
+	  later version published by the Free Software Foundation.</prudhomm>
+    </para>
+	<para>
+	  On Debian systems, the complete text of the GNU General Public
+	  License can be found in /usr/share/common-licenses/GPL.
+	</para>
+
+  </refsect1>
+</refentry>
+
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:2
+sgml-indent-data:t
+sgml-parent-document:nil
+sgml-default-dtd-file:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
+
+

@@ -1,0 +1,3 @@
+usr/bin/netgen
+debian/*.xpm usr/share/pixmaps/
+debian/netgen.desktop usr/share/applications/

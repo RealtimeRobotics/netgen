@@ -1,0 +1,9 @@
+usr/lib/python3/dist-packages/netgen/libngpy.so
+usr/lib/python3/dist-packages/netgen/geom2d.py
+usr/lib/python3/dist-packages/netgen/stl.py
+usr/lib/python3/dist-packages/netgen/csg.py
+usr/lib/python3/dist-packages/netgen/gui.py
+usr/lib/python3/dist-packages/netgen/__init__.py
+usr/lib/python3/dist-packages/netgen/NgOCC.py
+usr/lib/python3/dist-packages/netgen/meshing.py
+usr/lib/python3/dist-packages/netgen/read_gmsh.py

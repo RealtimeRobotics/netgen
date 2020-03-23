@@ -1,0 +1,46 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+CPPFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS)
+CFLAGS   := $(shell dpkg-buildflags --get CPPFLAGS) $(shell dpkg-buildflags --get CFLAGS)
+CXXFLAGS := $(shell dpkg-buildflags --get CPPFLAGS) $(shell dpkg-buildflags --get CXXFLAGS)
+LDFLAGS  := $(shell dpkg-buildflags --get LDFLAGS)
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
+%:
+	dh $@ --with=python3 --buildsystem=cmake
+
+export MACHINE=LINUX
+
+extra_flags += \
+	-DNG_INSTALL_DIR_LIB:PATH=lib/$(DEB_HOST_MULTIARCH)/netgen \
+	-DNG_INSTALL_DIR_INCLUDE:PATH=include/netgen \
+	-DPYBIND_INCLUDE_DIR:PATH=/usr/include \
+	-DUSE_OCC:BOOL=ON \
+	-DUSE_SUPERBUILD:BOOL=OFF \
+	-DUSE_NATIVE_ARCH:BOOL=OFF
+
+disable_mpi_archs = mips mipsel ppc64el
+
+ifeq (,$(filter $(DEB_HOST_ARCH),$(disable_mpi_archs)))
+       extra_flags += \
+       -DCMAKE_CXX_FLAGS="-DMPICH_SKIP_MPICXX -DOMPI_SKIP_MPICXX -lmpi -fPIC \
+                          -Wall $(shell dpkg-buildflags --get CXXFLAGS)" \
+       -DUSE_MPI:BOOL=ON
+else
+       extra_flags += \
+       -DCMAKE_CXX_FLAGS="-DMPICH_SKIP_MPICXX -DOMPI_SKIP_MPICXX -fopenmp -fPIC \
+                          -Wall $(shell dpkg-buildflags --get CXXFLAGS)" \
+       -DUSE_MPI:BOOL=OFF
+endif
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(extra_flags)
+
+override_dh_auto_test:
+	# TODO: Get these working
+
+override_dh_missing:
+	dh_missing --fail-missing

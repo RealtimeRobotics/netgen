@@ -1,0 +1,7 @@
+?package(netgen):               \
+  needs="X11"                 \
+  section="Applications/Science/Engineering" \
+  title="Netgen"                \
+  command="/usr/bin/netgen"     \
+  icon="/usr/share/pixmaps/netgen16x16.xpm"
+
