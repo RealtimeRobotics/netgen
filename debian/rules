@@ -47,4 +47,4 @@ override_dh_auto_test:
 	# TODO: Get these working
 
 override_dh_missing:
-	dh_missing --fail-missing
+	dh_missing --list-missing
