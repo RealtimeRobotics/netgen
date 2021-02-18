@@ -1,3 +1,15 @@
+netgen (6.2.1804+dfsg1-3ubuntu1) bionic; urgency=medium
+
+  * USE_GUI:BOOL=OFF
+  * USE_OCC:BOOL=OFF
+  * USE_PYTHON:BOOL=OFF
+  * dh_missing: --fail-missing -> --list-missing
+  * no install missing libs
+  * no install missing usr/bin/netgen
+  * no install pythons
+
+ -- Neil Roza <neil@rtr.ai>  Thu, 18 Feb 2021 23:24:28 +0000
+
 netgen (6.2.1804+dfsg1-3build2) focal; urgency=medium
 
   * No-change rebuild for libgcc-s1 package name change.
