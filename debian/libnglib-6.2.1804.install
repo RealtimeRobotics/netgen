@@ -2,12 +2,8 @@ usr/lib/*/netgen/libnglib.so
 usr/lib/*/netgen/libvisual.so
 usr/lib/*/netgen/libocc.so
 usr/lib/*/netgen/libcsg.so
-usr/lib/*/netgen/libcsgvis.so
-usr/lib/*/netgen/libstlvis.so
 usr/lib/*/netgen/libgeom2d.so
 usr/lib/*/netgen/libinterface.so
 usr/lib/*/netgen/libmesh.so
 usr/lib/*/netgen/libstl.so
 usr/lib/*/netgen/liboccvis.so
-usr/lib/*/netgen/libgui.so
-usr/lib/*/netgen/libgeom2dvis.so
