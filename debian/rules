@@ -1,5 +1,7 @@
 #!/usr/bin/make -f
 
+export DH_VERBOSE = 1
+
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 CPPFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS)
@@ -18,6 +20,7 @@ extra_flags += \
 	-DNG_INSTALL_DIR_LIB:PATH=lib/$(DEB_HOST_MULTIARCH)/netgen \
 	-DNG_INSTALL_DIR_INCLUDE:PATH=include/netgen \
 	-DPYBIND_INCLUDE_DIR:PATH=/usr/include \
+	-DUSE_GUI:BOOL=OFF \
 	-DUSE_OCC:BOOL=ON \
 	-DUSE_SUPERBUILD:BOOL=OFF \
 	-DUSE_NATIVE_ARCH:BOOL=OFF
